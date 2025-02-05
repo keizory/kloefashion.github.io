@@ -1,0 +1,205 @@
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: #f4f4f4;
+    body {
+        padding-top: 70px; /* Sesuaikan dengan tinggi navbar */
+      }
+      
+  }
+  a {
+    text-decoration: none;
+  }
+  /* Navbar */
+  .navbar {
+   
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      
+  }
+  .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  .nav-link {
+    font-size: 1rem;
+    margin-right: 15px;
+  }
+  /* Hero Section */
+  .hero {
+    background: url('https://i.pinimg.com/736x/ca/89/20/ca892056ef26e73343aa60645b466ed0.jpg') no-repeat center center/cover;
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  /* Overlay gradien */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+  .hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+  .hero-content .btn {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.8rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 2.2rem;
+    }
+    .hero-content p {
+      font-size: 0.9rem;
+    }
+  }
+/* Add this to your CSS file */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Start with cart off-screen */
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.cart-sidebar.open {
+  left: 0; /* Move it into view when toggled */
+}
+
+.cart-content h3 {
+  margin-bottom: 20px;
+}
+
+.cart-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.cart-content button {
+  margin-top: 20px;
+}
+
+  
+  /* Features Section */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px 5%;
+    background: #fff;
+  }
+  .feature-item {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+  }
+  .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  /* About Section */
+  .about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 5%;
+    background: #fafafa;
+  }
+  .about-text {
+    flex: 1 1 45%;
+    margin-bottom: 20px;
+  }
+  .about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .about-text .btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+  .image-overlay {
+    flex: 1 1 45%;
+    position: relative;
+  }
+  .image-overlay img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  .image-overlay img:hover {
+    transform: scale(1.05);
+  }
+  /* Footer */
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 3px solid #eaeaea;
+  }
+
+.new-arrivals img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  .new-arrivals img:hover {
+    transform: scale(1.05);
+  }
+  .new-arrivals .card-body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+  }
+
+  
+ 

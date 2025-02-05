@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fashion Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Import Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+</head>
+<body>
+  <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">KLOÉ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#new-arrivals">New Arrivals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#bag">Bag</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Heels">Heels</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Sandals">Sandals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>       
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p>Special for this summer</p>
+      <h1>Women's Wear</h1>
+      <p>SALE UP TO 50% OFF</p>
+      <a href="#new-arrivals" class="btn btn-light">NEW ARRIVALS</a>
+    </div>
+  </section>
+
+  <div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-content">
+      <h3>Your Cart</h3>
+      <ul id="cart-items"></ul>
+      <p>Subtotal: <span id="cart-subtotal">Rp 0</span></p>
+      <p>Tax (10%): <span id="cart-tax">Rp 0</span></p>
+      <p>Discount: <span id="cart-discount">Rp 0</span></p>
+      <p>Total: <span id="cart-total">Rp 0</span></p>
+      <button id="checkout-button" onclick="checkout()" class="btn btn-dark">Checkout</button>
+    </div>
+  </div>
+  
+
+  <!-- New Arrivals -->
+  <section id="new-arrivals" class="new-arrivals py-5 bg-white text-center">
+    <div class="container"> 
+      <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">New Arrivals</h2>
+      <div class="row">
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="nikimedium.png" class="card-img-top" alt="Brown Long Blouse">
+            <div class="card-body">
+              <p class="card-title mb-1">Niki Medium Crema Soft Rhw</p>
+              <p class="text-danger fw-bold">IDR 43.500.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Niki Medium Crema Soft Rhw', 43500000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="opiumheels.png" class="card-img-top" alt="Grey Check Long Coat">
+            <div class="card-body">
+              <p class="card-title mb-1">Opyum 85 Patent Leather Pumps Black</p>
+              <p class="text-danger fw-bold">IDR 9.600.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Opyum 85 Patent Leather Pumps Black', 9600000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="minibucket.png" class="card-img-top" alt="White Casual Suit">
+            <div class="card-body">
+              <p class="card-title mb-1">Mini Bucket Bag Shiny Leather Black</p>
+              <p class="text-danger fw-bold">IDR 30.500.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Mini Bucket Bag Shiny Leather Black', 30500000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="sandals.png" class="card-img-top" alt="Beige Sweater">
+            <div class="card-body">
+              <p class="card-title mb-1">Tribute Calf Leather Flat Sandal Gris </p>
+              <p class="text-danger fw-bold">IDR 6.500.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Tribute Calf Leather Flat Sandal Gris', 6500000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="bag" class="new-arrivals py-5 bg-white text-center">
+    <div class="container"> 
+      <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Bag</h2>
+      <div class="row">
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="bag1.png" class="card-img-top" alt="Brown Long Blouse">
+            <div class="card-body">
+              <p class="card-title mb-1">Drawstring Hobo Bag Smooth Leather Dark Green</p>
+              <p class="text-danger fw-bold">IDR 36.000.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Drawstring Hobo Bag Smooth Leather Dark Green', 36000000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="bag2.png" class="card-img-top" alt="Grey Check Long Coat">
+            <div class="card-body">
+              <p class="card-title mb-1">OWoc 19 Envelope Lambskin Leather Greyish Brown Ghw</p>
+              <p class="text-danger fw-bold">IDR Rp19.500.000</p>
+              <button class="btn btn-primary" onclick="addToCart('OWoc 19 Envelope Lambskin Leather Greyish Brown Ghw', 19500000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="bag3.png" class="card-img-top" alt="White Casual Suit">
+            <div class="card-body">
+              <p class="card-title mb-1">Mini 5 A 7 Hobo Bag Smooth Leather Black</p>
+              <p class="text-danger fw-bold">IDR 21.500.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Mini 5 A 7 Hobo Bag Smooth Leather Black', 21500000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="bag4.png" class="card-img-top" alt="Beige Sweater">
+            <div class="card-body">
+              <p class="card-title mb-1">Calypso Plunged Lambskin Shoulder Bag Black</p>
+              <p class="text-danger fw-bold">IDR 32.000.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Calypso Plunged Lambskin Shoulder Bag Black', 32000000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Heels -->
+  <section id="Heels" class="new-arrivals py-5 bg-white text-center">
+    <div class="container"> 
+      <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Heels</h2>
+      <div class="row">
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="https://images.voila.id/pr:sharp/rs:fit:1920:0/plain/https%3A%2F%2Fassets.voila.id%2Fvoila%2Fimages%2Fproduct%2Fsaint-laurent%2F2product-315487BZC009008-Xms-2022-05-25T1036240700.jpeg@webp" class="card-img-top" alt="Brown Long Blouse">
+              <div class="card-body">
+              <p class="card-title mb-1">Tribute 135 Smooth Heels White</p>
+              <p class="text-danger fw-bold">IDR 8.500.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Tribute 135 Smooth Heels White', 8500000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="https://images.voila.id/pr:sharp/rs:fit:1920:0/plain/https%3A%2F%2Fassets.voila.id%2Fvoila%2Fimages%2Fproduct%2Fsaint-laurent%2F11product-6509862WQ006475-Xms-2024-06-03T1412210700.jpeg@webp" class="card-img-top" alt="Grey Check Long Coat">
+            <div class="card-body">
+              <p class="card-title mb-1">Smooth Leather Sandal Heels Rouge</p>
+              <p class="text-danger fw-bold">IDR 9.600.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Smooth Leather Sandal Heels Rouge', 9600000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="https://images.voila.id/pr:sharp/rs:fit:1920:0/plain/https%3A%2F%2Fassets.voila.id%2Fvoila%2Fimages%2Fproduct%2Fsaint-laurent%2F1product-650986B8I001000-Xms-2023-03-20T1204500700.jpeg@webp" class="card-img-top" alt="White Casual Suit">
+            <div class="card-body">
+              <p class="card-title mb-1">Patent Leather Sandal Heels Black</p>
+              <p class="text-danger fw-bold">IDR 7.200.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Patent Leather Sandal Heels Black', 7200000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="https://images.voila.id/pr:sharp/rs:fit:1920:0/plain/https%3A%2F%2Fassets.voila.id%2Fvoila%2Fimages%2Fproduct%2Fsaint-laurent%2F2product-620673DWE001000-Xms-2022-07-01T1327390700.jpeg@webp" class="card-img-top" alt="Beige Sweater">
+            <div class="card-body">
+              <p class="card-title mb-1">Smooth Leather Sandal Heels Black </p>
+              <p class="text-danger fw-bold">IDR 8.500.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Smooth Leather Sandal Heels Black', 8500000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sandals -->
+  <section id="Sandals" class="new-arrivals py-5 bg-white text-center">
+    <div class="container"> 
+      <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Sandals</h2>
+      <div class="row">
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="https://images.voila.id/pr:sharp/rs:fit:1920:0/plain/https%3A%2F%2Fassets.voila.id%2Fvoila%2Fimages%2Fproduct%2Fsaint-laurent%2F2product-659817B8IKK1000-Xms-2023-10-25T1101540700.jpeg@webp" class="card-img-top" alt="Brown Long Blouse">
+              <div class="card-body">
+              <p class="card-title mb-1">Cassandra Sandals in Patent Black</p>
+              <p class="text-danger fw-bold">IDR 7.900.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Cassandra Sandals in Patent Black', 7900000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="https://images.voila.id/pr:sharp/rs:fit:1920:0/plain/https%3A%2F%2Fassets.voila.id%2Fvoila%2Fimages%2Fproduct%2Fsaint-laurent%2F3product-7760810NLDD2121-Xms-2024-05-17T1121440700.jpeg@webp" class="card-img-top" alt="Grey Check Long Coat">
+            <div class="card-body">
+              <p class="card-title mb-1">Cassandra Sandals Laminated Brown</p>
+              <p class="text-danger fw-bold">IDR 8.500.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Cassandra Sandals Laminated Brown', 8500000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="https://images.voila.id/pr:sharp/rs:fit:1920:0/plain/https%3A%2F%2Fassets.voila.id%2Fvoila%2Fimages%2Fproduct%2F424-abcdef%2F1-product-testing-dev-xms-2024-02-24-21.10.jpg@webp" class="card-img-top" alt="White Casual Suit">
+            <div class="card-body">
+              <p class="card-title mb-1">Tribute Leather Flat Mules White</p>
+              <p class="text-danger fw-bold">IDR 6.200.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Tribute Leather Flat Mules White', 6200000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="card border-0">
+            <img src="https://images.voila.id/pr:sharp/rs:fit:1920:0/plain/https%3A%2F%2Fassets.voila.id%2Fvoila%2Fimages%2Fproduct%2Fsaint-laurent%2F3product-571952AAAZY1000-Xms-2023-10-25T1109380700.jpeg@webp" class="card-img-top" alt="Beige Sweater">
+            <div class="card-body">
+              <p class="card-title mb-1">Tribute Leather Flat Sandal Black </p>
+              <p class="text-danger fw-bold">IDR 8.500.000</p>
+              <button class="btn btn-primary" onclick="addToCart('Tribute Leather Flat Sandal Black', 8500000)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-text">
+      <h2>Get to Know Us</h2>
+      <p>We bring the best of fashion trends to your fingertips. Our passion for style and creativity is reflected in every design we produce. Join us on this journey of elegance and modernity.</p>
+      <a href="#" class="btn btn-dark">Continue Reading</a>
+    </div>
+    <div class="image-overlay">
+      <img src="https://i.pinimg.com/736x/cb/71/41/cb7141083471301d19c4d24f09a7d42c.jpg" alt="Laptop with Makeup">
+    </div>
+  </section>
+
+    
+      <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-light text-center">
+    <div class="container-fluid"> 
+      <h2 class="mb-4" style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Contact Us</h2>
+      <p class="mb-4">Have questions or need assistance? Feel free to reach out to us.</p>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 KLOÉ. All Rights Reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
